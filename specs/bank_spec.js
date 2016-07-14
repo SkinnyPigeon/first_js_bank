@@ -6,7 +6,7 @@ var assert = require( 'chai').assert
 describe( "The Bank: ", function() {
   beforeEach( function() {
     jeff = new Account( "Jeff", 50, "personal")
-    steve = new Account( "Steve", 50, "business")
+    steve = new Account( "Steve", 100, "business")
     fatCatsInc = new Bank( "Fat Cats Inc")
   })
 
@@ -31,4 +31,31 @@ describe( "The Bank: ", function() {
     fatCatsInc.newCustomer( jeff );
     assert.deepEqual( jeff, fatCatsInc.search( "Jeff" ) )
   })
+
+  it( "Should be able to return the highest value account in order to invite them for investment drinks", function() {
+    fatCatsInc.newCustomer( jeff );
+    fatCatsInc.newCustomer( steve );
+    assert.equal( steve, fatCatsInc.richList() )
+  })
+
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
