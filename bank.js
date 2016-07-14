@@ -15,7 +15,7 @@ Bank.prototype = {
     var foundAccount = "Nowt";
     this.accounts.forEach( function( account ) { 
       if( account.name === customer ){
-          foundAccount = account;
+        foundAccount = account;
       }
     } )
     return foundAccount;
@@ -24,13 +24,29 @@ Bank.prototype = {
   richList: function() {
     var cashMoneyBags = "Nowt";
     _.sortBy( this.accounts, ['cash']) 
-      cashMoneyBags = _.last( this.accounts )
-      return cashMoneyBags 
+    cashMoneyBags = _.last( this.accounts )
+    return cashMoneyBags 
+  },
+
+  totesCash: function() {
+    this.total = 0;
+    this.accounts.forEach( function( account ) {
+      this.total += account.cash;
+    }.bind( this ) );
   }
-  // _.sortBy(users, ['user', 'age']);
 }
 
 
 
 
 module.exports = Bank;
+
+
+
+
+
+
+
+
+
+

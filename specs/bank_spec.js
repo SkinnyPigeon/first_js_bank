@@ -38,6 +38,13 @@ describe( "The Bank: ", function() {
     assert.equal( steve, fatCatsInc.richList() )
   })
 
+  it( "Should return the total cash value", function() {
+    fatCatsInc.newCustomer( jeff );
+    fatCatsInc.newCustomer( steve );
+    fatCatsInc.totesCash();
+    assert.equal( 150, fatCatsInc.total )
+  })
+
 
 })
 
