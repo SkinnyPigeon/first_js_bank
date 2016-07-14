@@ -33,7 +33,14 @@ Bank.prototype = {
     this.accounts.forEach( function( account ) {
       this.total += account.cash;
     }.bind( this ) );
+  },
+
+  avCash: function() {
+    return _.round( this.total / this.accounts.length, 2)
+    // return Math.round( average * 100) / 100;
+
   }
+
 }
 
 

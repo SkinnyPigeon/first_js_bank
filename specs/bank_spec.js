@@ -45,6 +45,13 @@ describe( "The Bank: ", function() {
     assert.equal( 150, fatCatsInc.total )
   })
 
+  it( "Should find the average cash value", function() {
+    fatCatsInc.newCustomer( jeff );
+    fatCatsInc.newCustomer( steve );
+    fatCatsInc.totesCash();
+    assert.equal( 75, fatCatsInc.avCash() )    
+  })
+
 
 })
 
