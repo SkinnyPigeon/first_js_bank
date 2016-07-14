@@ -7,6 +7,15 @@ var Bank = function( name ) {
 Bank.prototype = {
   newCustomer: function( customer ) {
     this.accounts.push( customer )
+  },
+  search: function( customer ) { 
+    foundAccount = "Nowt"
+    this.accounts.forEach( function( account ) { 
+      if( account.name === customer ){
+          foundAccount = account
+      }
+    } )
+    return foundAccount
   }
 }
 

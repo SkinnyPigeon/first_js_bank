@@ -26,4 +26,9 @@ describe( "The Bank: ", function() {
     fatCatsInc.newCustomer( jeff );
     assert.equal( 1, fatCatsInc.accounts.length )
   })
+
+  it( "Should be able to search for customer", function() {
+    fatCatsInc.newCustomer( jeff );
+    assert.deepEqual( jeff, fatCatsInc.search( "Jeff" ) )
+  })
 })
