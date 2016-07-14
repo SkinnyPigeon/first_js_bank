@@ -4,5 +4,13 @@ var Bank = function( name ) {
   this.total = 0;
 }
 
-// Bank.prototype = function;
+Bank.prototype = {
+  newCustomer: function( customer ) {
+    this.accounts.push( customer )
+  }
+}
+
+
+
+
 module.exports = Bank;

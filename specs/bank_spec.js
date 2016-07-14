@@ -21,4 +21,9 @@ describe( "The Bank: ", function() {
   it( "Should start as they end", function() {
     assert.equal( 0, fatCatsInc.total )
   })
+
+  it( "Should be able to add a customer", function() {
+    fatCatsInc.newCustomer( jeff );
+    assert.equal( 1, fatCatsInc.accounts.length )
+  })
 })
