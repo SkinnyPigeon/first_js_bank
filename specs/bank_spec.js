@@ -52,6 +52,12 @@ describe( "The Bank: ", function() {
     assert.equal( 75, fatCatsInc.avCash() )    
   })
 
+  it( "Should find the total per account type", function() {
+    fatCatsInc.newCustomer( jeff );
+    fatCatsInc.newCustomer( steve );
+    assert.equal( 50, fatCatsInc.typeCash( "personal" ))
+  })
+
 
 })
 

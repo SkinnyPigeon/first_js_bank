@@ -36,9 +36,17 @@ Bank.prototype = {
   },
 
   avCash: function() {
-    return _.round( this.total / this.accounts.length, 2)
-    // return Math.round( average * 100) / 100;
+    return _.round( this.total / this.accounts.length, 2);
+  },
 
+  typeCash: function( accountType ) {
+    var typeAccounts = 0;
+    this.accounts.forEach( function( account ) { 
+      if( account.type === accountType ){
+        typeAccounts += account.cash;
+      }
+    } )
+    return typeAccounts;
   }
 
 }
