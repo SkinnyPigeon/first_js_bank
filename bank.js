@@ -12,6 +12,7 @@ Bank.prototype = {
   },
 
   search: function( customer ) { 
+    if( !customer ) return this.accounts;
     var foundAccount = "Nowt";
     this.accounts.forEach( function( account ) { 
       if( account.name === customer ){
@@ -40,6 +41,7 @@ Bank.prototype = {
   },
 
   typeCash: function( accountType ) {
+    if( !accountType ) return this.accounts;
     var typeAccounts = 0;
     this.accounts.forEach( function( account ) { 
       if( account.type === accountType ){
@@ -48,11 +50,7 @@ Bank.prototype = {
     } )
     return typeAccounts;
   }
-
 }
-
-
-
 
 module.exports = Bank;
 
